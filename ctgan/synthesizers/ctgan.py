@@ -405,7 +405,11 @@ class CTGAN(BaseSynthesizer):
 
                 fake = self._generator(fakez)
                 fakeact = self._apply_activate(fake)
-
+                print("FAKE")
+                print(fake)
+                print("REAL")
+                print(real)
+                
                 if c1 is not None:
                     y_fake = discriminator(torch.cat([fakeact, c1], dim=1))
                 else:
